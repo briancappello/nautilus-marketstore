@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.12"
 
 [[package]]
@@ -263,7 +263,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "msgpack", specifier = ">=1.0" },
-    { name = "nautilus-trader", specifier = ">=1.222.0" },
+    { name = "nautilus-trader", editable = "../nautilus_trader" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "pymarketstore", editable = "../pymarketstore" },
@@ -278,8 +278,8 @@ dev = [
 
 [[package]]
 name = "nautilus-trader"
-version = "1.222.0"
-source = { registry = "https://pypi.org/simple" }
+version = "1.223.0"
+source = { editable = "../nautilus_trader" }
 dependencies = [
     { name = "click" },
     { name = "fsspec" },
@@ -292,20 +292,59 @@ dependencies = [
     { name = "tqdm" },
     { name = "uvloop", marker = "sys_platform != 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ce/41/2ae45f5c49dec4c7a6821bb7e80334a0e67ed7d141a9a6575a06d0112674/nautilus_trader-1.222.0.tar.gz", hash = "sha256:057b8706bbc0260510645f5d5cb6336229b44da4608a542926b7c78c8859883b", size = 4522041, upload-time = "2026-01-02T05:28:32.171Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a7/c6/9cbc4adac8d4da3b974589407391e6b0d367e6ca9ed51a954ccc7d1e89c7/nautilus_trader-1.222.0-cp312-cp312-macosx_15_0_arm64.whl", hash = "sha256:588e9c587d675bec29cc5e22db234562b990dd06c9a2cec13ddd1ca4551b19b1", size = 97736633, upload-time = "2026-01-02T05:25:59.45Z" },
-    { url = "https://files.pythonhosted.org/packages/df/fb/6c6c09812ae6de25547fdb1db82fc2bcccfcdd51bf356a22edbc8718af6a/nautilus_trader-1.222.0-cp312-cp312-manylinux_2_35_aarch64.whl", hash = "sha256:9df023e4398a19af9a81d3c073b37baa5d39c9a8a5f404bcc33c64c8c260eb55", size = 103306311, upload-time = "2026-01-02T05:26:25.861Z" },
-    { url = "https://files.pythonhosted.org/packages/8d/e0/e228791f07198a221869643bcc8746bc9a489dbf605bccc0c873db05b4dc/nautilus_trader-1.222.0-cp312-cp312-manylinux_2_35_x86_64.whl", hash = "sha256:7853e32a0e4800b06634c32f25575a990719b047ca54e277690c43cfa5402436", size = 110942565, upload-time = "2026-01-02T05:26:41.165Z" },
-    { url = "https://files.pythonhosted.org/packages/89/53/2d99ec082f84bf388061c569042fb448dbdb5dd2c1533144a70a2d9cbfff/nautilus_trader-1.222.0-cp312-cp312-win_amd64.whl", hash = "sha256:703afb702fee45f4c2f154e1e4234d0b18ee9427e929519519c4750bc99db5f1", size = 47422878, upload-time = "2026-01-02T05:26:20.846Z" },
-    { url = "https://files.pythonhosted.org/packages/d2/65/db21db182ebb3121db6469941f538c3c0480fde93a4394a9d29c0d199a4f/nautilus_trader-1.222.0-cp313-cp313-macosx_15_0_arm64.whl", hash = "sha256:5993055143f9a846d9290d17037d975a817f1410e7bfd11efa2053dda1b30f97", size = 97806167, upload-time = "2026-01-02T05:26:46.406Z" },
-    { url = "https://files.pythonhosted.org/packages/73/81/c66d0465b1f0ac95cf0a37d4d109abce22bd96e009ac29fd88c0dc5bc914/nautilus_trader-1.222.0-cp313-cp313-manylinux_2_35_aarch64.whl", hash = "sha256:1a33ab71c5d45913a38d209ffc966d0832bb91dd1087babe3d14dbc87b40f67a", size = 103370321, upload-time = "2026-01-02T05:25:50.38Z" },
-    { url = "https://files.pythonhosted.org/packages/0d/79/58db24e9ab43555177833a197a92244bad854b0953e756601d868724762b/nautilus_trader-1.222.0-cp313-cp313-manylinux_2_35_x86_64.whl", hash = "sha256:d9145a1705d6ecb972951517f3b0a8fae64252617abcc852f1bac5fc657cf4d6", size = 110863638, upload-time = "2026-01-02T05:26:05.077Z" },
-    { url = "https://files.pythonhosted.org/packages/cc/9d/2f0f9863cc6fc11b0f0ac48db1c1fe979e9bf4c91ea9920938aa78cb0114/nautilus_trader-1.222.0-cp313-cp313-win_amd64.whl", hash = "sha256:5810be8b46b03e658d5beff738d5a0c83d38500f2158bf3ab17ce7da9aeb4aaf", size = 47393370, upload-time = "2026-01-02T05:25:54.674Z" },
-    { url = "https://files.pythonhosted.org/packages/c9/38/f5437e7e2c8ebad6a74ca2f24847c6638864d0f62b4c26f8d3a9bc724734/nautilus_trader-1.222.0-cp314-cp314-macosx_15_0_arm64.whl", hash = "sha256:877ae91121714cce59722eb12af206ed20f14b2b59846bd2e4e82e4fec87448a", size = 97916256, upload-time = "2026-01-02T05:26:10.669Z" },
-    { url = "https://files.pythonhosted.org/packages/85/8d/c94602394715518c4fd40d02bc7fc9aa2f2a133783357e4fb6deb168596d/nautilus_trader-1.222.0-cp314-cp314-manylinux_2_35_aarch64.whl", hash = "sha256:4b098d0c53bdc7751e84d57f637904e2ee841f2c6e1eacbf270e69095f137c87", size = 103535148, upload-time = "2026-01-02T05:26:16.116Z" },
-    { url = "https://files.pythonhosted.org/packages/b2/f5/576fbf850d452f93e16b7e0f6bc5f685acf1df4863655c4e61816eef3331/nautilus_trader-1.222.0-cp314-cp314-manylinux_2_35_x86_64.whl", hash = "sha256:56e5ef3f5a061d665187c43d340304f0964f6fa2b4cf76fc44bc0fff5dd4c296", size = 110953448, upload-time = "2026-01-02T05:26:32.028Z" },
-    { url = "https://files.pythonhosted.org/packages/0e/ba/7abc46e665dcbbeadcd1be46b39deed031a543c026c042c1a97724d352fa/nautilus_trader-1.222.0-cp314-cp314-win_amd64.whl", hash = "sha256:c413fc150937f3bb5f9fb6fa7181c2ecfb0fa253186e247de28847f556e10d8c", size = 48528002, upload-time = "2026-01-02T05:26:36.349Z" },
+
+[package.metadata]
+requires-dist = [
+    { name = "betfair-parser", marker = "extra == 'betfair'", specifier = "==0.19.1" },
+    { name = "click", specifier = ">=8.0.0,<9.0.0" },
+    { name = "defusedxml", marker = "python_full_version < '3.14' and extra == 'ib'", specifier = ">=0.7.1,<1.0.0" },
+    { name = "docker", marker = "extra == 'docker'", specifier = ">=7.1.0,<8.0.0" },
+    { name = "fsspec", specifier = ">=2025.2.0,<=2026.1.0" },
+    { name = "msgspec", specifier = ">=0.20.0,<1.0.0" },
+    { name = "nautilus-ibapi", marker = "python_full_version < '3.14' and extra == 'ib'", specifier = "==10.43.2" },
+    { name = "numpy", specifier = ">=1.26.4" },
+    { name = "pandas", specifier = ">=2.3.3,<3.0.0" },
+    { name = "plotly", marker = "extra == 'visualization'", specifier = ">=6.3.1,<7.0.0" },
+    { name = "portion", specifier = ">=2.6.1" },
+    { name = "protobuf", marker = "python_full_version < '3.14' and extra == 'ib'", specifier = "==5.29.5" },
+    { name = "py-clob-client", marker = "extra == 'polymarket'", specifier = ">=0.34.6,<1.0.0" },
+    { name = "pyarrow", specifier = ">=22.0.0" },
+    { name = "pytz", specifier = ">=2025.2.0" },
+    { name = "tqdm", specifier = ">=4.67.3,<5.0.0" },
+    { name = "uvloop", marker = "sys_platform != 'win32'", specifier = "==0.22.1,<1.0.0" },
+]
+provides-extras = ["betfair", "ib", "docker", "polymarket", "visualization"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "cython", specifier = "==3.2.4" },
+    { name = "mypy", specifier = "==1.19.1,<2.0.0" },
+    { name = "pandas-stubs", specifier = ">=2.3.3,<3.0.0" },
+    { name = "pre-commit", specifier = ">=4.5.0,<5.0.0" },
+    { name = "ruff", specifier = "==0.15.1" },
+    { name = "setuptools", specifier = ">=80" },
+    { name = "types-pytz", specifier = ">=2025.2,<2026.0" },
+    { name = "types-toml", specifier = ">=0.10.2,<1.0.0" },
+]
+docs = [
+    { name = "linkify-it-py", specifier = ">=2.0.3,<3.0.0" },
+    { name = "myst-parser", specifier = ">=5.0.0,<6.0.0" },
+    { name = "numpydoc", specifier = ">=1.10.0,<2.0.0" },
+    { name = "sphinx-comments", specifier = ">=0.0.3,<1.0.0" },
+    { name = "sphinx-markdown-builder", specifier = ">=0.6.9,<1.0.0" },
+]
+test = [
+    { name = "aiohttp", specifier = ">=3.13.3,<4.0.0" },
+    { name = "coverage", specifier = ">=7.13.4,<8.0.0" },
+    { name = "pytest", specifier = ">=7.4.4,<8.0.0" },
+    { name = "pytest-aiohttp", specifier = ">=1.1.0,<2.0.0" },
+    { name = "pytest-asyncio", specifier = "==0.23.8" },
+    { name = "pytest-benchmark", specifier = "==5.0.1" },
+    { name = "pytest-codspeed", specifier = "==4.3.0" },
+    { name = "pytest-cov", specifier = "==6.3.0" },
+    { name = "pytest-mock", specifier = ">=3.15.1,<4.0.0" },
+    { name = "pytest-rerunfailures", specifier = ">=16.1,<17.0.0" },
+    { name = "pytest-xdist", extras = ["psutil"], specifier = ">=3.8.0,<4.0.0" },
 ]
 
 [[package]]
