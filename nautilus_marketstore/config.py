@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from nautilus_trader.common.config import NautilusConfig
-from nautilus_trader.common.config import PositiveInt
+from nautilus_trader.common.config import InstrumentProviderConfig
 from nautilus_trader.live.config import LiveDataClientConfig
 
 
-class MarketStoreInstrumentProviderConfig(NautilusConfig, frozen=True):
+class MarketStoreInstrumentProviderConfig(InstrumentProviderConfig, frozen=True):
     """
     Configuration for the MarketStore instrument provider.
 
@@ -15,9 +14,6 @@ class MarketStoreInstrumentProviderConfig(NautilusConfig, frozen=True):
     """
 
     load_all: bool = True
-    load_ids: frozenset | None = None
-    filters: dict | None = None
-    log_warnings: bool = True
 
 
 class MarketStoreDataClientConfig(LiveDataClientConfig, frozen=True):

@@ -278,7 +278,7 @@ dev = [
 
 [[package]]
 name = "nautilus-trader"
-version = "1.223.0"
+version = "1.222.0"
 source = { editable = "../nautilus_trader" }
 dependencies = [
     { name = "click" },
@@ -295,52 +295,58 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "betfair-parser", marker = "extra == 'betfair'", specifier = "==0.19.1" },
+    { name = "bech32", marker = "python_full_version < '3.14' and extra == 'dydx'", specifier = ">=1.2.0,<2.0.0" },
+    { name = "betfair-parser", marker = "extra == 'betfair'", specifier = "==0.18.0" },
+    { name = "bip-utils", marker = "python_full_version < '3.14' and extra == 'dydx'", specifier = ">=2.10.0,<3.0.0" },
     { name = "click", specifier = ">=8.0.0,<9.0.0" },
     { name = "defusedxml", marker = "python_full_version < '3.14' and extra == 'ib'", specifier = ">=0.7.1,<1.0.0" },
     { name = "docker", marker = "extra == 'docker'", specifier = ">=7.1.0,<8.0.0" },
-    { name = "fsspec", specifier = ">=2025.2.0,<=2026.1.0" },
+    { name = "ecdsa", marker = "python_full_version < '3.14' and extra == 'dydx'", specifier = ">=0.19.1,<1.0.0" },
+    { name = "fsspec", specifier = ">=2025.2.0,<2026.0.0" },
+    { name = "grpcio", marker = "python_full_version < '3.14' and extra == 'dydx'", specifier = "==1.68.1" },
     { name = "msgspec", specifier = ">=0.20.0,<1.0.0" },
-    { name = "nautilus-ibapi", marker = "python_full_version < '3.14' and extra == 'ib'", specifier = "==10.43.2" },
+    { name = "nautilus-ibapi", marker = "python_full_version < '3.14' and extra == 'ib'", specifier = "==10.30.1" },
     { name = "numpy", specifier = ">=1.26.4" },
-    { name = "pandas", specifier = ">=2.3.3,<3.0.0" },
+    { name = "pandas", specifier = ">=2.2.3,<3.0.0" },
     { name = "plotly", marker = "extra == 'visualization'", specifier = ">=6.3.1,<7.0.0" },
     { name = "portion", specifier = ">=2.6.1" },
-    { name = "protobuf", marker = "python_full_version < '3.14' and extra == 'ib'", specifier = "==5.29.5" },
-    { name = "py-clob-client", marker = "extra == 'polymarket'", specifier = ">=0.34.6,<1.0.0" },
-    { name = "pyarrow", specifier = ">=22.0.0" },
+    { name = "protobuf", marker = "python_full_version < '3.14' and extra == 'dydx'", specifier = "==5.29.5" },
+    { name = "py-clob-client", marker = "extra == 'polymarket'", specifier = "==0.34.1,<1.0.0" },
+    { name = "pyarrow", specifier = ">=21.0.0" },
+    { name = "pycryptodome", marker = "python_full_version < '3.14' and extra == 'dydx'", specifier = ">=3.20.0,<4.0.0" },
     { name = "pytz", specifier = ">=2025.2.0" },
-    { name = "tqdm", specifier = ">=4.67.3,<5.0.0" },
+    { name = "tqdm", specifier = ">=4.67.1,<5.0.0" },
     { name = "uvloop", marker = "sys_platform != 'win32'", specifier = "==0.22.1,<1.0.0" },
+    { name = "v4-proto", marker = "python_full_version < '3.14' and extra == 'dydx'", specifier = "==7.0.5" },
 ]
-provides-extras = ["betfair", "ib", "docker", "polymarket", "visualization"]
+provides-extras = ["betfair", "ib", "docker", "dydx", "polymarket", "visualization"]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "cython", specifier = "==3.2.4" },
+    { name = "cython", specifier = "==3.2.3" },
     { name = "mypy", specifier = "==1.19.1,<2.0.0" },
     { name = "pandas-stubs", specifier = ">=2.3.3,<3.0.0" },
     { name = "pre-commit", specifier = ">=4.5.0,<5.0.0" },
-    { name = "ruff", specifier = "==0.15.1" },
+    { name = "ruff", specifier = "==0.14.10" },
     { name = "setuptools", specifier = ">=80" },
     { name = "types-pytz", specifier = ">=2025.2,<2026.0" },
     { name = "types-toml", specifier = ">=0.10.2,<1.0.0" },
 ]
 docs = [
     { name = "linkify-it-py", specifier = ">=2.0.3,<3.0.0" },
-    { name = "myst-parser", specifier = ">=5.0.0,<6.0.0" },
+    { name = "myst-parser", specifier = ">=4.0.1,<5.0.0" },
     { name = "numpydoc", specifier = ">=1.10.0,<2.0.0" },
     { name = "sphinx-comments", specifier = ">=0.0.3,<1.0.0" },
     { name = "sphinx-markdown-builder", specifier = ">=0.6.9,<1.0.0" },
 ]
 test = [
-    { name = "aiohttp", specifier = ">=3.13.3,<4.0.0" },
-    { name = "coverage", specifier = ">=7.13.4,<8.0.0" },
+    { name = "aiohttp", specifier = "==3.12.14,<4.0.0" },
+    { name = "coverage", specifier = ">=7.13.1,<8.0.0" },
     { name = "pytest", specifier = ">=7.4.4,<8.0.0" },
     { name = "pytest-aiohttp", specifier = ">=1.1.0,<2.0.0" },
     { name = "pytest-asyncio", specifier = "==0.23.8" },
     { name = "pytest-benchmark", specifier = "==5.0.1" },
-    { name = "pytest-codspeed", specifier = "==4.3.0" },
+    { name = "pytest-codspeed", specifier = "==4.2.0" },
     { name = "pytest-cov", specifier = "==6.3.0" },
     { name = "pytest-mock", specifier = ">=3.15.1,<4.0.0" },
     { name = "pytest-rerunfailures", specifier = ">=16.1,<17.0.0" },
@@ -579,8 +585,9 @@ requires-dist = [
     { name = "msgpack", specifier = ">=1.0.0" },
     { name = "numpy", specifier = ">=1.24.0" },
     { name = "pandas", specifier = ">=2.0.0" },
-    { name = "protobuf", specifier = ">=4.25.0" },
+    { name = "protobuf", specifier = ">=5.26.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0" },
+    { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.23.0" },
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.1.0" },
     { name = "requests", specifier = ">=2.31.0" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.2.0" },
@@ -590,6 +597,16 @@ requires-dist = [
     { name = "websockets", specifier = ">=12.0" },
 ]
 provides-extras = ["dev"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pyqt6", specifier = ">=6.10.2" },
+    { name = "pytest-asyncio", specifier = ">=0.23.0" },
+    { name = "pytest-cov", specifier = ">=7.0.0" },
+    { name = "pytest-xdist", specifier = ">=3.8.0" },
+    { name = "qtconsole", specifier = ">=5.7.1" },
+    { name = "ruff", specifier = ">=0.15.1" },
+]
 
 [[package]]
 name = "pytest"
